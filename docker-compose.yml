@@ -1,0 +1,15 @@
+version: '3'
+Services:
+  web:
+    # Replace username/repo:tag with your name and image details.
+    image: 'bburak/mydockerproject:latest'
+    ports:
+      - '80:80'
+    networks:
+      - 'webnet'
+    redis:
+      image: redis
+      networks:
+        - 'webnet'
+networks:
+  webnet:
